@@ -228,8 +228,7 @@ h2 {
 
 .tech-tag {
     padding: 12px 24px;
-    background: white;
-    border: 2px solid #eee;
+    background: transparent;    border: 2px solid #eee;
     border-radius: 30px;
     font-size: 0.95rem;
     font-weight: 500;
@@ -251,8 +250,7 @@ h2 {
 
 .project-card {
     padding: 30px;
-    background: white;
-    border: 2px solid #eee;
+    background: transparent;    border: 2px solid #eee;
     border-radius: 15px;
     text-decoration: none;
     color: inherit;
@@ -288,8 +286,7 @@ h2 {
 
 .connect-btn {
     padding: 15px 35px;
-    background: white;
-    border: 2px solid #eee;
+    background: transparent;    border: 2px solid #eee;
     border-radius: 8px;
     text-decoration: none;
     color: #333;
@@ -471,6 +468,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
