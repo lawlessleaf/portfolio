@@ -179,11 +179,9 @@ olor: #333;
 section {
     margin: 80px 0;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
+    background: transparent;    backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;}
 
 h2 {
     font-size: 0.9rem;
@@ -473,6 +471,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
