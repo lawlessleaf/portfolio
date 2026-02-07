@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;    line-height: 1.7;
-    color: #333;
-    background: #fafafa;
+    color: #e0e0e0;
+    background: #0a0a0a;
     overflow-x: hidden;
     position: relative;
 }
@@ -94,7 +94,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #333;
+    border: 3px solid #e0e0e0;
     border-radius: 20px;
     background: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -117,11 +117,11 @@ body {
 .logo-icon {
     font-size: 4.5rem;
     font-weight: 700;
-    color: #333;
+    color: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
-olor: #333;
+olor: #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,13 +146,13 @@ olor: #333;
         font-family: 'Syne', sans-serif;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1a1a1a;
+    color: #ffffff;
     letter-spacing: -2px;
 }
 
 .tagline {
     font-size: 1.1rem;
-    color: #666;
+    color: #b0b0b0;
     letter-spacing: 3px;
     margin-bottom: 40px;
     font-weight: 400;
@@ -161,7 +161,7 @@ olor: #333;
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: #000;
+    background: #ffffff;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -187,7 +187,7 @@ h2 {
     font-size: 0.9rem;
         font-family: 'Syne', sans-serif;
     letter-spacing: 3px;
-    color: #999;
+    color: #a0a0a0;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 500;
@@ -197,7 +197,7 @@ h2 {
 .about p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #555;
+    color: #c0c0c0;
     text-align: center;
 }
 
@@ -215,7 +215,7 @@ h2 {
 .focus-item h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #333;
+    color: #e0e0e0;
 }
 
 /* ===== Tech Stack ===== */
@@ -228,16 +228,16 @@ h2 {
 
 .tech-tag {
     padding: 12px 24px;
-    background: transparent;    border: 2px solid #eee;
+    background: transparent;    border: 2px solid #333;
     border-radius: 30px;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #333;
+    color: #e0e0e0;
     transition: all 0.3s;
 }
 
 .tech-tag:hover {
-    border-color: #333;
+    border-color: #e0e0e0;
     transform: translateY(-2px);
 }
 
@@ -250,7 +250,7 @@ h2 {
 
 .project-card {
     padding: 30px;
-    background: transparent;    border: 2px solid #eee;
+    background: transparent;    border: 2px solid #333;
     border-radius: 15px;
     text-decoration: none;
     color: inherit;
@@ -258,7 +258,7 @@ h2 {
 }
 
 .project-card:hover {
-    border-color: #333;
+    border-color: #e0e0e0;
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -266,13 +266,13 @@ h2 {
 .project-card h3 {
     font-size: 1.3rem;
     margin-bottom: 10px;
-    color: #1a1a1a;
+    color: #ffffff;
     font-weight: 600;
 }
 
 .project-card p {
     font-size: 0.95rem;
-    color: #666;
+    color: #b0b0b0;
     line-height: 1.6;
 }
 
@@ -286,10 +286,10 @@ h2 {
 
 .connect-btn {
     padding: 15px 35px;
-    background: transparent;    border: 2px solid #eee;
+    background: transparent;    border: 2px solid #333;
     border-radius: 8px;
     text-decoration: none;
-    color: #333;
+    color: #e0e0e0;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s;
@@ -298,7 +298,7 @@ h2 {
 }
 
 .connect-btn:hover {
-    border-color: #333;
+    border-color: #e0e0e0;
     transform: translateY(-2px);
 }
 
@@ -350,13 +350,13 @@ h2 {
 }
 
 .close:hover {
-    color: #333;
+    color: #e0e0e0;
 }
 
 .modal-content h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #1a1a1a;
+    color: #ffffff;
     text-align: center;
     letter-spacing: 0;
     font-weight: 600;
@@ -364,7 +364,7 @@ h2 {
 
 .modal-content p {
     text-align: center;
-    color: #666;
+    color: #b0b0b0;
     margin-bottom: 30px;
 }
 
@@ -377,7 +377,7 @@ h2 {
 
 .upi-label {
     font-size: 0.9rem;
-    color: #999;
+    color: #a0a0a0;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -386,14 +386,14 @@ h2 {
 .upi-id {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #333;
+    color: #e0e0e0;
     margin-bottom: 20px;
     font-family: 'Courier New', monospace;
 }
 
 .copy-btn {
     padding: 12px 30px;
-    background: #000;
+    background: #ffffff;
     color: white;
     border: none;
     border-radius: 8px;
@@ -416,7 +416,7 @@ h2 {
 footer {
     text-align: center;
     padding: 40px 20px;
-    color: #999;
+    color: #a0a0a0;
     font-size: 0.9rem;
 }
 
@@ -431,7 +431,7 @@ footer p {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: #000;
+    background: #ffffff;
     color: white;
     border: none;
     border-radius: 50%;
