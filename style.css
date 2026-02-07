@@ -129,6 +129,10 @@ olor: #333;
 
 /* ===== Hero Section ===== */
 .hero {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     text-align: center;
     padding: 60px 0;
 }
@@ -465,6 +469,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
