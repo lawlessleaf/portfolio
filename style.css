@@ -108,10 +108,14 @@ body {
     border-radius: 17px;
 }
 
-.logo-text {
-    font-size: 3rem;
+.logo-icon {
+    font-size: 4.5rem;
     font-weight: 700;
     color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+olor: #333;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -453,4 +457,5 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
