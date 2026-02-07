@@ -161,8 +161,8 @@ olor: #e0e0e0;
 .cta-button {
     display: inline-block;
     padding: 15px 40px;
-    background: #000;    color: white;
-    text-decoration: none;
+    background: #ffffff;
+    color: #000;    text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
     font-size: 1rem;
@@ -467,6 +467,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
