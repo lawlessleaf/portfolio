@@ -4,31 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sujal Kalauni | Code, Projects, & Innovation</title>
-    <meta name="description" content="Personal portfolio of Sujal Kalauni - Computer Science Student, Full Stack Developer, and Tech Enthusiast">
+    <meta name="description" content="Personal portfolio of Sujal Kalauni - Computer Science Student, Full Stack Developer">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Particle Network Background -->
     <canvas id="particles"></canvas>
+    
+    <!-- Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
 
     <!-- Main Content -->
     <div class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="logo">SK</div>
+            <div class="logo">
+                <img src="logo.png" alt="Logo" id="logoImage">
+            </div>
             <h1>Sujal Kalauni</h1>
             <p class="tagline">CODE, PROJECTS, & INNOVATION</p>
             <a href="#about" class="cta-button">Explore My Work →</a>
         </section>
 
         <!-- About Section -->
-        <section class="section" id="about">
+        <section id="about" class="about">
             <h2>ABOUT</h2>
             <p><strong>Sujal Kalauni</strong> is a passionate Computer Science student from Pithoragarh, Uttarakhand. I craft clean code and purposeful projects, prioritizing innovation, efficiency, and elegant solutions.</p>
         </section>
 
         <!-- Focus Section -->
-        <section class="section focus">
+        <section class="focus">
             <h2>FOCUS</h2>
             <div class="focus-grid">
                 <div class="focus-item">
@@ -43,23 +55,23 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="section skills">
+        <!-- Tech Stack -->
+        <section class="tech-stack">
             <h2>TECH STACK</h2>
-            <div class="tech-grid">
-                <div class="tech-item">C++</div>
-                <div class="tech-item">Python</div>
-                <div class="tech-item">JavaScript</div>
-                <div class="tech-item">React.js</div>
-                <div class="tech-item">Node.js</div>
-                <div class="tech-item">HTML/CSS</div>
+            <div class="tech-tags">
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">HTML/CSS</span>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section class="section projects">
+        <!-- Projects -->
+        <section class="projects">
             <h2>PROJECTS</h2>
-            <div class="project-list">
+            <div class="projects-grid">
                 <a href="#" class="project-card">
                     <h3>Banking Application</h3>
                     <p>Secure banking system with transaction management</p>
@@ -75,33 +87,39 @@
             </div>
         </section>
 
-        <!-- Connect Section -->
-        <section class="section connect">
+        <!-- Connect -->
+        <section class="connect">
             <h2>CONNECT</h2>
-            <div class="social-links">
-                <a href="https://github.com/lawlessleaf" target="_blank">GitHub</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="#coffee">Support ☕</a>
-            </div>
-        </section>
-
-        <!-- Buy Me a Coffee Section -->
-        <section class="section coffee" id="coffee">
-            <h2>BUY ME A COFFEE ☕</h2>
-            <p>If you like my work, consider supporting me!</p>
-            <div class="upi-section">
-                <p class="upi-label">UPI ID:</p>
-                <p class="upi-id">8273983822@ptsbi</p>
-                <button onclick="copyUPI()" class="copy-btn">Copy UPI ID</button>
+            <div class="connect-links">
+                <a href="https://github.com/lawlessleaf" class="connect-btn">GitHub</a>
+                <a href="https://linkedin.com/" class="connect-btn">LinkedIn</a>
+                <button class="connect-btn" id="coffeeBtn">Support ☕</button>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer>
             <p>Sujal Kalauni | Computer Science Student</p>
-            <p>© 2026 | Built with passion and code</p>
+            <p>&copy; 2026 | Built with passion and code</p>
         </footer>
     </div>
+
+    <!-- UPI Popup Modal -->
+    <div id="upiModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Buy Me a Coffee ☕</h2>
+            <p>If you like my work, consider supporting me!</p>
+            <div class="upi-box">
+                <p class="upi-label">UPI ID:</p>
+                <p class="upi-id" id="upiId">8273983822@ptsbi</p>
+                <button class="copy-btn" id="copyBtn">Copy UPI ID</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="script.js"></script>
 </body>
