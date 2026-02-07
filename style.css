@@ -6,8 +6,7 @@
 }
 
 body {
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;    line-height: 1.7;
     color: #333;
     background: #fafafa;
     overflow-x: hidden;
@@ -136,6 +135,7 @@ olor: #333;
 
 .hero h1 {
     font-size: 4rem;
+        font-family: 'Syne', sans-serif;
     font-weight: 700;
     margin-bottom: 15px;
     color: #1a1a1a;
@@ -179,6 +179,7 @@ section {
 
 h2 {
     font-size: 0.9rem;
+        font-family: 'Syne', sans-serif;
     letter-spacing: 3px;
     color: #999;
     margin-bottom: 30px;
@@ -464,6 +465,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
