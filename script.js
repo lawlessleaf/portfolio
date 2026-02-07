@@ -1,6 +1,94 @@
-// ===== Portfolio JavaScript =====
+// ===== Particle Network Animation =====
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
 
-// Smooth scroll for navigation links
+// Set canvas size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Particle array
+const particles = [];
+const particleCount = 80;
+const connectionDistance = 150;
+
+// Particle class
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = 2;
+    }
+
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#999';
+        ctx.fill();
+    }
+}
+
+// Create particles
+for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+}
+
+// Draw connections
+function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < connectionDistance) {
+                const opacity = 1 - distance / connectionDistance;
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(150, 150, 150, ${opacity * 0.3})`;
+                ctx.lineWidth = 1;
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+// Animation loop
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Update and draw particles
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    // Draw connections
+    drawConnections();
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Resize canvas on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -14,24 +102,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// ===== Copy UPI ID Function =====
+function copyUPI() {
+    const upiId = '8273983822@ptsbi';
     
-    // Add shadow on scroll
-    if (currentScroll > 50) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.boxShadow = 'none';
+    // Create temporary textarea
+    const textarea = document.createElement('textarea');
+    textarea.value = upiId;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    
+    // Select and copy
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+    
+    try {
+        document.execCommand('copy');
+        
+        // Show feedback
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied! ✓';
+        btn.style.background = '#10b981';
+        
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '#000';
+        }, 2000);
+    } catch (err) {
+        console.error('Failed to copy:', err);
+        alert('Failed to copy UPI ID');
     }
     
-    lastScroll = currentScroll;
-});
+    // Remove temporary textarea
+    document.body.removeChild(textarea);
+}
 
-// Intersection Observer for fade-in animations
+// ===== Scroll Animation =====
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -46,132 +154,14 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
+// Observe sections
+document.querySelectorAll('.section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
 });
 
-// Observe skill and project cards
-document.querySelectorAll('.skill-card, .project-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-    observer.observe(card);
-});
-
-// Typing effect for hero title (optional enhancement)
-const heroTitle = document.querySelector('.hero-title');
-if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    heroTitle.style.opacity = '1';
-    
-    let index = 0;
-    function typeWriter() {
-        if (index < text.length) {
-            heroTitle.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 50);
-        }
-    }
-    
-    // Start typing after page load
-    setTimeout(typeWriter, 500);
-}
-
-// Active navigation link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.style.color = '';
-        if (link.getAttribute('href') === `#${current}`) {
-            link.style.color = '#6366f1';
-        }
-    });
-});
-
-// Button hover effects enhancement
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
-    });
-});
-
-// Project cards hover effect
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
-    });
-});
-
-// Scroll to top button (optional)
-const scrollToTopBtn = document.createElement('button');
-scrollToTopBtn.innerHTML = '↑';
-scrollToTopBtn.className = 'scroll-to-top';
-scrollToTopBtn.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-`;
-
-document.body.appendChild(scrollToTopBtn);
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.style.opacity = '1';
-    } else {
-        scrollToTopBtn.style.opacity = '0';
-    }
-});
-
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-scrollToTopBtn.addEventListener('mouseenter', function() {
-    this.style.transform = 'scale(1.1)';
-});
-
-scrollToTopBtn.addEventListener('mouseleave', function() {
-    this.style.transform = 'scale(1)';
-});
-
 // Console message
-console.log('%c Portfolio Website Loaded Successfully! ', 'background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 10px 20px; border-radius: 5px; font-size: 14px; font-weight: bold;');
-console.log('%c Built with ❤️ by Sujal Kalauni', 'color: #6366f1; font-size: 12px;');
-
-// Page load performance
-window.addEventListener('load', () => {
-    const loadTime = performance.now();
-    console.log(`%c⚡ Page loaded in ${Math.round(loadTime)}ms`, 'color: #10b981; font-weight: bold;');
-});
+console.log('%c Sujal Kalauni Portfolio ', 'background: #000; color: #fff; padding: 10px; font-size: 14px; font-weight: bold;');
+console.log('%c Built with passion and code ❤️', 'color: #666; font-size: 12px;');
