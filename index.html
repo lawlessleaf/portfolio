@@ -1,147 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sujal Kalauni | Full Stack Developer Portfolio</title>
-    <meta name="description" content="Portfolio of Sujal Kalauni - Computer Science Student & Full Stack Developer passionate about web technologies and innovation" />
-    <link rel="stylesheet" href="style.css" /></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujal Kalauni | Code, Projects, & Innovation</title>
+    <meta name="description" content="Personal portfolio of Sujal Kalauni - Computer Science Student, Full Stack Developer, and Tech Enthusiast">
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">SK</h1>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Particle Network Background -->
+    <canvas id="particles"></canvas>
 
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Sujal Kalauni</span></h1>
-                <p class="hero-subtitle">Computer Science Student | Full Stack Developer</p>
-                <p class="hero-description">Building innovative web solutions with passion for clean code and user experience</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="logo">SK</div>
+            <h1>Sujal Kalauni</h1>
+            <p class="tagline">CODE, PROJECTS, & INNOVATION</p>
+            <a href="#about" class="cta-button">Explore My Work →</a>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <h2>ABOUT</h2>
+            <p><strong>Sujal Kalauni</strong> is a passionate Computer Science student from Pithoragarh, Uttarakhand. I craft clean code and purposeful projects, prioritizing innovation, efficiency, and elegant solutions.</p>
+        </section>
+
+        <!-- Focus Section -->
+        <section class="section focus">
+            <h2>FOCUS</h2>
+            <div class="focus-grid">
+                <div class="focus-item">
+                    <h3>Full Stack Development</h3>
+                </div>
+                <div class="focus-item">
+                    <h3>Machine Learning</h3>
+                </div>
+                <div class="focus-item">
+                    <h3>Problem Solving</h3>
                 </div>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I'm a passionate Computer Science student from Pithoragarh, Uttarakhand, currently studying at university level. I specialize in building modern web applications using cutting-edge technologies.</p>
-                <p>My journey in tech is driven by curiosity and a desire to create meaningful solutions. When I'm not coding, you can find me exploring new technologies, contributing to open source, or capturing moments through photography.</p>
+        <!-- Skills Section -->
+        <section class="section skills">
+            <h2>TECH STACK</h2>
+            <div class="tech-grid">
+                <div class="tech-item">C++</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">React.js</div>
+                <div class="tech-item">Node.js</div>
+                <div class="tech-item">HTML/CSS</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>HTML5 & CSS3</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>React.js</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>RESTful APIs</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Tools & Others</h3>
-                    <ul>
-                        <li>Git & GitHub</li>
-                        <li>VS Code</li>
-                        <li>Machine Learning</li>
-                        <li>Problem Solving</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+        <!-- Projects Section -->
+        <section class="section projects">
+            <h2>PROJECTS</h2>
+            <div class="project-list">
+                <a href="#" class="project-card">
                     <h3>Banking Application</h3>
-                    <p>A comprehensive banking system with secure transactions and account management features.</p>
-                    <div class="project-tech">
-                        <span>Java</span>
-                        <span>MySQL</span>
-                        <span>JDBC</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
+                    <p>Secure banking system with transaction management</p>
+                </a>
+                <a href="#" class="project-card">
                     <h3>ML Model Training</h3>
-                    <p>Offline AI model training system optimized for CUDA devices with high performance.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>TensorFlow</span>
-                        <span>CUDA</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
+                    <p>Offline AI training optimized for CUDA devices</p>
+                </a>
+                <a href="#" class="project-card">
                     <h3>Portfolio Website</h3>
-                    <p>A modern, responsive portfolio showcasing my work and skills with clean design.</p>
-                    <div class="project-tech">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
+                    <p>Modern responsive portfolio with clean design</p>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-description">I'm always open to discussing new projects, creative ideas, or opportunities.</p>
-            <div class="contact-links">
-                <a href="mailto:sujalkalauni@email.com" class="contact-btn">Email Me</a>
-                <a href="https://github.com/lawlessleaf" class="contact-btn">GitHub</a>
-                <a href="https://linkedin.com" class="contact-btn">LinkedIn</a>
+        <!-- Connect Section -->
+        <section class="section connect">
+            <h2>CONNECT</h2>
+            <div class="social-links">
+                <a href="https://github.com/lawlessleaf" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="#coffee">Support ☕</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Sujal Kalauni. Built with passion and code.</p>
-        </div>
-    </footer>
+        <!-- Buy Me a Coffee Section -->
+        <section class="section coffee" id="coffee">
+            <h2>BUY ME A COFFEE ☕</h2>
+            <p>If you like my work, consider supporting me!</p>
+            <div class="upi-section">
+                <p class="upi-label">UPI ID:</p>
+                <p class="upi-id">8273983822@ptsbi</p>
+                <button onclick="copyUPI()" class="copy-btn">Copy UPI ID</button>
+            </div>
+        </section>
 
-    <script src="script.js"></script></body>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Sujal Kalauni | Computer Science Student</p>
+            <p>© 2026 | Built with passion and code</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
-
