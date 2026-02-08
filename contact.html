@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Kalauni</title>
-  <link rel="stylesheet" href="styles/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect | Sujal Kalauni</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h2 class="section-title">Contact Me</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required/>
-      <input type="email" placeholder="Your Email" required/>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Or email me directly: <a href="mailto:your-email@example.com">sujal1kalauni@gmail.com</a></p>
-  </div>
-  <footer>&copy; 2025 Kalauni.</footer>
+    <div class="page-container">
+        <h1>CONNECT</h1>
+        <div class="connect-links">
+            <a href="https://github.com/lawlessleaf" class="connect-btn">GitHub</a>
+            <a href="https://linkedin.com/" class="connect-btn">LinkedIn</a>
+            <button class="connect-btn" id="coffeeBtn">Support ☕</button>
+        </div>
+    </div>
+
+    <!-- UPI Modal -->
+    <div id="upiModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Buy Me a Coffee ☕</h2>
+            <p>If you like my work, consider supporting me!</p>
+            <div class="upi-box">
+                <p class="upi-label">UPI ID:</p>
+                <p class="upi-id" id="upiId">8273983822@ptsbi</p>
+                <button class="copy-btn" id="copyBtn">Copy UPI ID</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Circular Menu Button (Bottom Right) -->
+    <div class="menu-button" id="menuButton">
+        <img src="unnamed.png" alt="Menu" class="menu-logo">
+    </div>
+
+    <!-- Expandable Navigation Menu -->
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="focus.html">Focus</a></li>
+            <li><a href="tech-stack.html">Tech Stack</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
 </body>
 </html>
