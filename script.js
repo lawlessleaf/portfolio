@@ -140,8 +140,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
+
+// ===== Circular Menu Toggle =====
+const menuButton = document.getElementById('menuButton');
+const navMenu = document.getElementById('navMenu');
+
+if (menuButton && navMenu) {
+    menuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuButton.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+}
                 block: 'start'
             });
         }
     });
 });
+
