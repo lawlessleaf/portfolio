@@ -3,19 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujal Kalauni</title>
+    <title>Sujal Kalauni | Code, Projects, & Innovation</title>
+    <meta name="description" content="Personal portfolio of Sujal Kalauni - Computer Science Student, Full Stack Developer">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particle Network Background -->
+    <canvas id="particles"></canvas>
+    
+    <!-- Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
     <!-- Main Content -->
-    <div class="home-container">
-        <!-- Name/Logo -->
-        <h1 class="main-name">SUJAL KALAUNI</h1>
-        
-        <!-- Footer Copyright -->
-        <footer class="home-footer">
-            <p>© 2026 Sujal Kalauni | All Rights Reserved</p>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="logo">
+                <img src="unnamed.png" alt="Logo" class="logo-image" />
+            </div>
+            <p style="font-size: 1.1rem; color: #666; letter-spacing: 3px; font-weight: 600; text-align: center; margin-bottom: 40px;">SUJAL KALAUNI</p>
+            <p class="tagline">CODE, PROJECTS, & INNOVATION</p>
+            <a href="#about" class="cta-button">Explore My Work →</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>ABOUT</h2>
+            <p>A passionate developer focused on creating innovative solutions through code. Specializing in modern web technologies and machine learning applications, with a deep interest in solving complex problems. Constantly learning and adapting to new technologies while building projects that make a difference.</p>
+        </section>
+
+        <!-- Focus Section -->
+        <section class="focus">
+            <h2>FOCUS</h2>
+            <div class="focus-grid">
+                <div class="focus-item">
+                    <h3>Machine Learning</h3>
+                </div>
+                <div class="focus-item">
+                    <h3>Cybersecurity</h3>
+                </div>
+                <div class="focus-item">
+                    <h3>DSA</h3>
+                </div>
+                <div class="focus-item">
+                    <h3>Full Stack Development</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="tech-stack">
+            <h2>TECH STACK</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">C</span>
+                <span class="tech-tag">Shell Scripting</span>
+                <span class="tech-tag">HTML/CSS</span>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects">
+            <h2>PROJECTS</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/users/lawlessleaf/projects/1" class="project-card">
+                    <h3>Visual Speech Recognition</h3>
+                    <p>Predicting speech from lip movement of the speaker</p>
+                </a>
+                <a href="#" class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>Modern responsive portfolio with clean design</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Connect -->
+        <section class="connect">
+            <h2>CONNECT</h2>
+            <div class="connect-links">
+                <a href="https://github.com/lawlessleaf" class="connect-btn">GitHub</a>
+                <a href="https://linkedin.com/" class="connect-btn">LinkedIn</a>
+                <button class="connect-btn" id="coffeeBtn">Support ☕</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Sujal Kalauni | Computer Science Student</p>
+            <p>© 2026 | Built with passion and code</p>
         </footer>
+    </div>
+
+    <!-- UPI Popup Modal -->
+    <div id="upiModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Buy Me a Coffee ☕</h2>
+            <p>If you like my work, consider supporting me!</p>
+            <div class="upi-box">
+                <p class="upi-label">UPI ID:</p>
+                <p class="upi-id" id="upiId">8273983822@ptsbi</p>
+                <button class="copy-btn" id="copyBtn">Copy UPI ID</button>
+            </div>
+        </div>
     </div>
 
     <!-- Circular Menu Button (Bottom Right) -->
@@ -34,6 +133,9 @@
             <li><a href="contact.html">Connect</a></li>
         </ul>
     </nav>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">↑</button>
 
     <script src="script.js"></script>
 </body>
