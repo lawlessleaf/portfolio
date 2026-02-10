@@ -7,6 +7,7 @@ My personal portfolio website showcasing my projects and skills.
 - CSS
 - JavaScript
 
+
 ## Live Demo
 Check out the live site!
 
